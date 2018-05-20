@@ -1,3 +1,5 @@
+package leetcode;
+
 /**
  * You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.
  *
@@ -19,7 +21,7 @@ public class _2_AddTwoNumbers {
 
         ListNode l1 = new ListNode(2);
         ListNode l2 = new ListNode(4);
-        ListNode l3 = new ListNode(3);
+        ListNode l3 = new ListNode(6);
         ListNode l4 = new ListNode(5);
         ListNode l5 = new ListNode(6);
         ListNode l6 = new ListNode(3);
@@ -30,7 +32,8 @@ public class _2_AddTwoNumbers {
         l4.next = l5;
         l5.next = l6;
 
-
+        System.out.println(l1);
+        System.out.println(l4);
         System.out.println(addTwoNumbers(l1, l4));
     }
 
@@ -48,7 +51,9 @@ public class _2_AddTwoNumbers {
         ListNode header = new ListNode(0);
         header.next = result;
 
-        while (l1.next != null && l2.next != null) {
+        l1 = l1.next;
+        l2 = l2.next;
+        while (l1 != null && l2 != null) {
             tmp = l1.val + l2.val + carry;
             carry = tmp / 10;
             remainder = tmp % 10;
@@ -57,8 +62,6 @@ public class _2_AddTwoNumbers {
             l1 = l1.next;
             l2 = l2.next;
         }
-
-
         while (l1 != null) {
             tmp = l1.val + carry;
             carry = tmp / 10;
@@ -77,6 +80,10 @@ public class _2_AddTwoNumbers {
             l2 = l2.next;
         }
 
+        if (carry != 0) {
+            result.next = new ListNode(carry);
+        }
+
         return header.next;
 
     }
@@ -93,9 +100,10 @@ public class _2_AddTwoNumbers {
         public String toString() {
             StringBuilder sb = new StringBuilder();
             sb.append(val + ", ");
-            while (next == null) {
-                sb.append(next.val);
-                next = next.next;
+            ListNode tmp = next;
+            while (tmp != null) {
+                sb.append(tmp.val + ", ");
+                tmp = tmp.next;
             }
             return sb.toString();
         }

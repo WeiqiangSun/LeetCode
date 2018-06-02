@@ -52,6 +52,7 @@ public class _3_LongestSubstringWithoutRepeatingCharacters {
         }
 
         System.out.println(1);
+        System.out.println(2);
         return max;
     }
 }

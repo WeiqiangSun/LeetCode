@@ -12,7 +12,6 @@ package leetcode;
  * Explanation: 342 + 465 = 807.
  *
  * @Description:
- * @Author: sunweiqiang
  * @Date: 2018-05-20
  */
 public class _2_AddTwoNumbers {

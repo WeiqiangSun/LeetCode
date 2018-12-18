@@ -16,7 +16,6 @@ import java.util.Map;
  *
  *
  * @Description:
- * @Author: sunweiqiang
  * @Date: 2018-05-20
  */
 public class _3_LongestSubstringWithoutRepeatingCharacters {

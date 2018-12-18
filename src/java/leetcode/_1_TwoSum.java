@@ -18,7 +18,6 @@ import java.util.Map;
  * return [0, 1].
  *
  * @Description:
- * @Author: sunweiqiang
  * @Date: 2018-05-06
  */
 public class _1_TwoSum {
